@@ -70,20 +70,20 @@ function test_input($data) {
 <h2>Application name: AAST_BIS class registration</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-   Name: <input type="text" name="name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed">
+   Name: <input type="text" name="name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  E-mail: <input type="text" name="email">
+  E-mail: <input type="text" name="email" value="<?php echo $email; ?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Group#: <input type="text" name="Group">
+  Group#: <input type="text" name="Group" value="<?php echo $Group; ?>">
   <span class="error"><?php echo $GroupErr;?></span>
   <br><br>
-  <span style="text-align:center;">Class details:</span> <textarea name="details" rows="5" cols="40" ></textarea>
+  <span style="text-align:center;">Class details:</span> <textarea name="details" rows="5" cols="40" ><?php echo $details; ?></textarea>
   <br><br>
   Gender:
-  <input type="radio" name="gender" value="female">Female
-  <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="female" <?php if ($gender == "female") echo "checked"; ?>>Female
+  <input type="radio" name="gender" value="male"<?php if ($gender == "male") echo "checked"; ?>>Male
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   Select Courses: 
